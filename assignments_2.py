@@ -65,3 +65,77 @@ for order in orders:
 print(f"Total Revenue after discounts: {total_revenue}")
 print(f"Number of orders with discount: {discount_orders}")
 
+#######################################################
+##      Task - 3 : User Menu (while loop + break/continue)
+########################################################
+
+orders = []
+
+while True:
+    print("\n--- MENU ---")
+    print("1 - Add order amount")
+    print("2 - Show all orders and total after discount")
+    print("q - Quit")
+
+    choice = input("Enter your choice: ")
+
+
+    if choice == 'q':
+        print("Goodbye!")
+        break
+
+
+    elif choice == '1':
+        amount = float(input("Enter order amount: "))
+        orders.append(amount)
+        print("Order added .")
+
+ 
+    elif choice == '2':
+        total = 0
+        print("\nOrders summary:")
+
+        for order in orders:
+            if order >= 2000:
+                discount = order * 0.15
+            elif order >= 1500:
+                discount = order * 0.10
+            elif order >= 1000:
+                discount = order * 0.07
+            else:
+                discount = 0
+
+            final_price = order - discount
+            total += final_price
+
+            print(f"Order: {order} | Discount: {discount} | Final: {final_price}")
+
+        print("Total after discount:", total)
+
+    else:
+        print("Invalid Try again.")
+        continue
+
+#######################################################
+##      Task - 4 : Loop Control with condition (break & continue)
+########################################################
+
+daily = [200, 150, 0, 400, 50, -1, 300]
+total_sales = 0
+
+for sale in daily:
+
+    if sale == -1:
+        print("Stopping processing.")
+        break
+
+    if sale == 0:
+        print("No sales today. Skipping.")
+        continue
+
+    total_sales += sale
+    print("Running total:", total_sales)
+
+print("Final total sales:", total_sales)
+
+
