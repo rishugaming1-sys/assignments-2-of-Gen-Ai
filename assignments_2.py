@@ -2,40 +2,38 @@
 ##              Assignments 2 : Python - Control Flow(Conditionals & Loops )
 ################################################################################################################
 
-########################################################
+################################################################################################################
 ##      Task - 1 : Discount Rules (if / elif / else )
-########################################################
+################################################################################################################
 
 ### user input using input() 
 #Order_amount = input("Enter your order amount : ")
 
-# ## Discount rules
-# if Order_amount.isdigit():
+if Order_amount.isdigit():
+     Order_amount = int(Order_amount)
+     
+     if Order_amount >= 2000:
+         discount = Order_amount * 0.15
+         amount = Order_amount - discount
+         print(f"your order amount after 15% discount is  : {amount}")
+     elif 1500 <= Order_amount < 2000:
+         discount =  Order_amount * 0.10
+         amount = Order_amount - discount
+         print(f"your order amount after 10% discount is  : {amount}")
+     elif 1000 <= Order_amount < 1500:
+             discount =  Order_amount * 0.07
+             amount = Order_amount - discount
+             print(f"your order amount after 7% discount is  : {amount}")
+     else:
+         print(f"your order amount is : {Order_amount}")
 
-#     Order_amount = int(Order_amount)
-
-#     if Order_amount >= 2000:
-#         discount = Order_amount * 0.15
-#         amount = Order_amount - discount
-#         print(f"your order amount after 15% discount is  : {amount}")
-#     elif 1500 <= Order_amount < 2000:
-#         discount =  Order_amount * 0.10
-#         amount = Order_amount - discount
-#         print(f"your order amount after 10% discount is  : {amount}")
-#     elif 1000 <= Order_amount < 1500:
-#             discount =  Order_amount * 0.07
-#             amount = Order_amount - discount
-#             print(f"your order amount after 7% discount is  : {amount}")
-#     else:
-#         print(f"your order amount is : {Order_amount}")
-
-# else :
-#     print("Error : Please enter a valid amount")
+ else :
+     print("Error : Please enter a valid amount")
 
 
-#######################################################
+###############################################################################################################
 ##      Task - 2 : Process Multiple Orders (for loop )
-########################################################
+################################################################################################################
 
 orders = [1200, 2500, 800, 1750, 3000]
 total_revenue = 0
@@ -65,9 +63,9 @@ for order in orders:
 print(f"Total Revenue after discounts: {total_revenue}")
 print(f"Number of orders with discount: {discount_orders}")
 
-#######################################################
+###############################################################################################################
 ##      Task - 3 : User Menu (while loop + break/continue)
-########################################################
+################################################################################################################
 
 orders = []
 
@@ -116,9 +114,9 @@ while True:
         print("Invalid Try again.")
         continue
 
-#######################################################
+###############################################################################################################
 ##      Task - 4 : Loop Control with condition (break & continue)
-########################################################
+################################################################################################################
 
 daily = [200, 150, 0, 400, 50, -1, 300]
 total_sales = 0
